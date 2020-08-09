@@ -22,11 +22,8 @@ public class Solution {
                     result = curSum;
                     minDiff = curDiff;
                 }
-                if (curSum > target) {
-                    R--;
-                } else {
-                    L++;
-                }
+                if (curSum > target) R--;
+                else L++;
             }
         }
 
