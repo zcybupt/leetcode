@@ -11,7 +11,7 @@ public class Solution {
         Arrays.sort(nums);
         int L, R;
 
-        for (int i = 0; i < listLen; i++) {
+        for (int i = 0; i < listLen - 2; i++) {
             if (nums[i] > 0) return results;
             if (i > 0 && nums[i] == nums[i - 1]) continue;
             L = i + 1;
