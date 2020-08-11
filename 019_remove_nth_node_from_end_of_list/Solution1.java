@@ -8,7 +8,7 @@ class ListNode {
 
 public class Solution1 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-       return removeNode(head, n) == n ? head.next : head; 
+        return removeNode(head, n) == n ? head.next : head; 
     }
 
     public int removeNode(ListNode node, int n) {
