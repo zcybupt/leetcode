@@ -29,7 +29,7 @@ public class Solution {
         char[] stack = new char[sLen];
         int index = 0;
         for (char ch : s.toCharArray()) {
-            if (index > 0 && stack[index-1] == getPair(ch)) {
+            if (index > 0 && stack[index - 1] == getPair(ch)) {
                 index--;
                 continue;
             }
