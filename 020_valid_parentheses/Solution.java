@@ -24,11 +24,13 @@ public class Solution {
     }
 
     public boolean isValid2(String s) {
-        char[] stack = new char[10];
+        int sLen = s.length();
+        if (sLen % 2 != 0) return false;
+        char[] stack = new char[sLen];
         int index = 0;
         for (char ch : s.toCharArray()) {
-            if (index > 0 && stack[index - 1] == getPair(ch)) {
-                stack[--index] = '\0';
+            if (index > 0 && stack[index-1] == getPair(ch)) {
+                index--;
                 continue;
             }
             stack[index++] = ch;
