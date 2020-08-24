@@ -14,7 +14,7 @@ class Solution:
 
     def dfs(self, candidates: list, begin: int, arr_len: int, target: int) -> None:
         if target == 0:
-            self.results.append([i for i in self.path]) # 注意此处 path 需要深拷贝
+            self.results.append(self.path[:]) # 注意此处 path 需要深拷贝
             return
 
         for i in range(begin, arr_len):
