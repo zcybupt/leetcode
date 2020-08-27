@@ -18,7 +18,7 @@ class Solution:
             return
 
         for i in range(begin, arr_len):
-            if target - candidates[i] < 0: break
+            if target < candidates[i]: break
             self.path.append(candidates[i])
             self.dfs(candidates, i, arr_len, target - candidates[i])
             self.path.pop()

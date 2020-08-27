@@ -25,7 +25,7 @@ func dfs(candidates []int, begin, arrLen, target int, results *[][]int, path []i
     }
 
     for i := begin; i < arrLen; i++ {
-        if target - candidates[i] < 0 {
+        if target < candidates[i] {
             break
         }
 

@@ -6,19 +6,20 @@ class Solution {
         List<List<Integer>> result = new ArrayList<>();
         if (len == 0) return result;
 
+        Arrays.sort(candidates);
         Deque<Integer> path = new ArrayDeque<>();
         dfs(candidates, 0, len, target, path, result);
         return result;
     }
 
     public void dfs(int[] candidates, int begin, int len, int target, Deque<Integer> path, List<List<Integer>> result) {
-        if (target < 0) return;
         if (target == 0) {
             result.add(new ArrayList<>(path));
             return;
         }
 
         for (int i = begin; i < len; i++) {
+            if (target < candidates[i]) break;
             path.addLast(candidates[i]);
             dfs(candidates, i, len, target - candidates[i], path, result);
             path.removeLast();
