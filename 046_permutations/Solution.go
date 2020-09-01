@@ -11,7 +11,7 @@ func permute(nums []int) [][]int {
 
 func dfs(results *[][]int, nums, tmp []int) {
     if len(nums) == 0 {
-        *results = append(*results, tmp)
+        *results = append(*results, append([]int{}, tmp...))
         return
     }
 
