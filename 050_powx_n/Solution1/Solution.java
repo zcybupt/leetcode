@@ -1,15 +1,15 @@
 class Solution {
-    public double quickMul(double x, int n) {
+    public double quickMul(double x, long n) {
         if (n == 0) return 1.0;
         double y = quickMul(x, n / 2);
         return n % 2 == 0 ? y * y : y * y * x;
     }
 
     public double myPow(double x, int n) {
-        return n >= 0 ? quickMul(x, n) : 1.0 / quickMul(x, -n);
+        return n >= 0 ? quickMul(x, n) : 1.0 / quickMul(x, -(long) n);
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().myPow(2, 10));
+        System.out.println(new Solution().myPow(2, -2147483648));
     }
 }
