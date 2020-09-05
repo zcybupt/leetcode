@@ -33,22 +33,17 @@ func getEdge(m [][]int, row1, col1, row2, col2 int) []int {
         return tmpResult
     }
 
-    curR, curC := row1, row1
-    for curC != col2 {
-        tmpResult = append(tmpResult, m[row1][curC])
-        curC++
+    for i := col1; i < col2; i++ {
+        tmpResult = append(tmpResult, m[row1][i])
     }
-    for curR != row2 {
-        tmpResult = append(tmpResult, m[curR][col2])
-        curR++
+    for i := row1; i < row2; i++ {
+        tmpResult = append(tmpResult, m[i][col2])
     }
-    for curC != col1 {
-        tmpResult = append(tmpResult, m[row2][curC])
-        curC--
+    for i := col2; i > col1; i-- {
+        tmpResult = append(tmpResult, m[row2][i])
     }
-    for curR != row1 {
-        tmpResult = append(tmpResult, m[curR][col1])
-        curR--
+    for i := row2; i > row1; i-- {
+        tmpResult = append(tmpResult, m[i][col1])
     }
 
     return tmpResult

@@ -16,19 +16,10 @@ class Solution:
                     result.append(matrix[i][col1])
                 return
 
-            cur_r, cur_c = row1, col1
-            while cur_c != col2:
-                result.append(matrix[row1][cur_c])
-                cur_c += 1
-            while cur_r != row2:
-                result.append(matrix[cur_r][col2])
-                cur_r += 1
-            while cur_c != col1:
-                result.append(matrix[row2][cur_c])
-                cur_c -= 1
-            while cur_r != row1:
-                result.append(matrix[cur_r][col1])
-                cur_r -= 1
+            for i in range(col1, col2): result.append(matrix[row1][i])
+            for i in range(row1, row2): result.append(matrix[i][col2])
+            for i in range(col2, col1, -1): result.append(matrix[row2][i])
+            for i in range(row2, row1, -1): result.append(matrix[i][col1])
 
         while (row1 <= row2 and col1 <= col2):
             get_edge(matrix)
