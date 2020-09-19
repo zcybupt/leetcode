@@ -1,6 +1,6 @@
 class Solution:
     def searchMatrix(self, matrix: list, target: int) -> bool:
-        if not matrix or len(matrix) == 0 or len(matrix[0]) == 0: return False
+        if not matrix or len(matrix) == 0: return False
         m, n = len(matrix) - 1, len(matrix[0]) - 1
         if target < matrix[0][0] or matrix[m][n] < target: return False
 
