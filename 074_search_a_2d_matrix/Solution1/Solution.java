@@ -6,14 +6,14 @@ class Solution {
 
         if (target < matrix[0][0] || target > matrix[b][r]) return false;
 
-        for (int i = 0; i < m && t <= b; i++) {
+        while (t <= b) {
             mid1 = (t + b) / 2;
             if (matrix[mid1][0] > target) b = mid1 - 1;
             else if (matrix[mid1][0] <= target && target <= matrix[mid1][r]) break;
             else t = mid1 + 1;
         }
 
-        for (int i = 0; i < n && l <= r; i++) {
+        while (l <= r) {
             mid2 = (l + r) / 2;
             if (matrix[mid1][mid2] == target) return true;
             else if (matrix[mid1][mid2] > target) r = mid2 - 1;
