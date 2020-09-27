@@ -8,22 +8,27 @@ class Solution {
 
     public List<List<Integer>> subsets(int[] nums) {
         for (int i = 0; i <= nums.length; i++) {
-            dfs(nums, 0, i, new ArrayDeque<>());
+            boolean[] used = new boolean[nums.length];
+            dfs(nums, 0, i, used);
         }
 
         return results;
     }
 
-    public void dfs(int[] nums, int start, int k, Deque<Integer> path) {
+    public void dfs(int[] nums, int start, int k, boolean[] used) {
         if (k == 0) {
-            results.add(new ArrayList<>(path));
+            List<Integer> tmpRes = new ArrayList<>();
+            for (int i = 0; i < nums.length; i++) {
+                if (used[i]) tmpRes.add(nums[i]);
+            }
+            results.add(tmpRes);
             return;
         }
 
         for (int i = start; i < nums.length; i++) {
-            path.addLast(nums[i]);
-            dfs(nums, i + 1, k - 1, path);
-            path.removeLast();
+            used[i] = true;
+            dfs(nums, i + 1, k - 1, used);
+            used[i] = false;
         }
     }
 
