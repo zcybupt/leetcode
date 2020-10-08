@@ -13,8 +13,8 @@ class TreeNode {
     }
 }
 
-class BinaryTree {
-    public TreeNode createTreeUsingBFS(int[] nums) {
+class Solution {
+    public static TreeNode createTreeUsingBFS(int[] nums) {
         TreeNode[] nodeArr = new TreeNode[nums.length];
         for (int i = 0; i < nums.length; i++) {
             nodeArr[i] = new TreeNode(nums[i]);
@@ -43,11 +43,5 @@ class BinaryTree {
             if (curNode.left != null) queue.addLast(curNode.left);
             if (curNode.right != null) queue.addLast(curNode.right);
         }
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
-        TreeNode root = new BinaryTree().createTreeUsingBFS(nums);
-        bfs(root);
     }
 }

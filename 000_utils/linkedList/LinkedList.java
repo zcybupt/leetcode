@@ -6,7 +6,7 @@ class ListNode {
     }
 }
 
-class LinkedList {
+class Solution {
     public static ListNode creatList(int[] nums) {
         ListNode head = new ListNode(nums[0]);
         ListNode tmp = head;
